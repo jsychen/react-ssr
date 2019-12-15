@@ -17,6 +17,20 @@ app.get('/course/list', (req, res) => {
     })
 });
 
+app.get('/user/info', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Content-Type', 'application/json;chartset=utf-8');
+
+    res.json({
+        code: 0,
+        data: {
+            title: '开课吧',
+            name: '大圣'
+        }
+    })
+});
+
 app.listen(3001, () => {
     console.log('mock启动完毕');
 });

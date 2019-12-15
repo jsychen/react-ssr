@@ -5,6 +5,7 @@ import { getIndexList } from '../store/index';
 function Index(props) {
     const [count, setCount] = useState(1);
     useEffect(() => {
+        if(props.list.length) return;
         props.getIndexList();
     }, []);
     return <div>
@@ -16,6 +17,10 @@ function Index(props) {
             })}
         </ul>
     </div>;
+};
+
+Index.loadData = (store) => {
+    return store.dispatch(getIndexList());
 };
 
 export default connect(
