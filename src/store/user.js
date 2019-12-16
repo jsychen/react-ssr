@@ -8,7 +8,7 @@ const changeInfo = data => ({
 
 export const getUserInfo = server => {
     return (dispatch, getState, axiosInstance) => {
-        return axios.get('http://localhost:3001/user/info1')
+        return axios.get('http://localhost:3001/user/info')
         .then(res => {
             
             const { data } = res.data;
